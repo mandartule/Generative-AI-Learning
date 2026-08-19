@@ -2,10 +2,10 @@ from dotenv import load_dotenv
 import streamlit as st
 from langchain_openai import ChatOpenAI
 
-#load env variables
+# Load environment variables from .env
 load_dotenv()
 
-# streamlit page setup
+# Streamlit page setup
 st.set_page_config(
     page_title="Chatbot",
     page_icon="🦁",
@@ -13,23 +13,25 @@ st.set_page_config(
 )
 st.title("💬 Generative AI Chatbot")
 
-# initiate chat history
+st.sidebar.markdown("👨‍💻 **Made by Mandar**")
+
+# Initiate chat history
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# show chat history
+# Show chat history
 for message in st.session_state.chat_history:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# llm initiate
+# LLM initiate
 llm = ChatOpenAI(
     base_url="https://openai.generative.engine.capgemini.com/v1",
     model="openai.gpt-4o",  # or "anthropic.claude-haiku-4-5-20251001-v1:0"
     temperature=1
 )
 
-# input box
+# Input box
 user_prompt = st.chat_input("Ask Chatbot...")
 
 if user_prompt:

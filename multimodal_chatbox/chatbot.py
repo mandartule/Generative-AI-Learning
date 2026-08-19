@@ -27,6 +27,8 @@ selected_model = st.sidebar.selectbox(
     index=0
 )
 st.sidebar.caption(f"Currently active: `{selected_model}`")
+st.sidebar.markdown("---")
+st.sidebar.markdown("👨‍💻 **Made by Mandar**")
 
 # Initiate chat history in session state
 if "chat_history" not in st.session_state:
