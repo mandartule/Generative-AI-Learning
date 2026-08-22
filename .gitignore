@@ -6,5 +6,9 @@ Genrative AI Chatbox\.env
 Genrative AI Chatbox/.env
 RAG_retrievial_augmented_generation\.env
 RAG_retrievial_augmented_generation/.env
+RAG_Llama_Index\.env
+RAG_Llama_Index/.env
 .env
 *.env
+.DS_Store
+*.DS_Store
